@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "buyer": {
+      "id": 1,
+      "accountNumber": "1000 00000 0000 0000",
+      "address": "BuyerStreet Street 1 63-100",
+      "email": "example@post.com.pl",
+      "name": "ExampleBuyer",
+      "phoneNumber": "22 788-83-22",
+      "address": "BuyerStreet 1 63-100",
+      "taxId": 7010416384
+    },
+    "dueDate": "2019-11-21",
+    "entries": [
+      {
+        "id": 1,
+        "description": "Siatka ogrodzeniowa",
+        "grossValue": 615,
+        "netValue": 500,
+        "price": 123,
+        "quantity": 5,
+        "vatRate": "VAT_23"
+      }
+    ],
+    "issuedDate": "2019-11-21",
+    "number": "FV/1/05/2019",
+    "seller": {
+      "id": 1,
+      "accountNumber": "27 1030 0019 0109 8503 0014 2668",
+      "address": "SellerStreet 1 63-100",
+      "email": "example@post.com.pl",
+      "name": "ExampleSeller",
+      "phoneNumber": "22 788-83-22",
+      "taxId": 7010416384
+    }
+  },
+  {
+    "id": 2,
+    "buyer": {
+      "id": 2,
+      "accountNumber": "1000 00000 0000 0000",
+      "address": "BuyerStreet Street 1 63-100",
+      "email": "example@post.com.pl",
+      "name": "ExampleBuyer",
+      "phoneNumber": "22 788-83-22",
+      "address": "BuyerStreet 1 63-100",
+      "taxId": 7010416384
+    },
+    "dueDate": "2019-11-21",
+    "entries": [
+      {
+        "id": 2,
+        "description": "Street3",
+        "grossValue": 615,
+        "netValue": 500,
+        "price": 123,
+        "quantity": 5,
+        "vatRate": "VAT_23"
+      }
+    ],
+    "issuedDate": "2019-11-21",
+    "number": "FV/1/05/2019",
+    "seller": {
+      "id": 2,
+      "accountNumber": "27 1030 0019 0109 8503 0014 2668",
+      "address": "Seller street 3",
+      "email": "example@post.com.pl",
+      "name": "ExampleSeller",
+      "phoneNumber": "22 788-83-22",
+      "taxId": 45654546
+    }
+  }
+]

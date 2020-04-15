@@ -1,0 +1,114 @@
+<div class="card">
+    <div class="card-body">
+        <div class='row'>
+            <div class='col-md-2'>Filter by:</div>
+            <div class='col-md-4'>
+                <input [(ngModel)]='listFilter'
+                       type='text'/>
+            </div>
+        </div>
+        <div class="table table-responsive">
+            <table *ngIf="objects && objects.length" class='table table-responsive-md'>
+                <thead>
+                <tr>
+                    <th scope="col">Number</th>
+                    <th scope="col">Seller</th>
+                    <th scope="col">Buyer</th>
+                    <th scope="col">Issued date</th>
+                    <th scope="col">Due date</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let object of filteredObjects">
+                    <td>{{object.number}}</td>
+                    <td>{{object.seller.name}}</td>
+                    <td>{{object.buyer.name}}</td>
+                    <td>{{object.issuedDate}}</td>
+                    <td>{{object.dueDate}}</td>
+                    <td>
+                        <!--                        <div aria-hidden="true" aria-labelledby="invoiceModal{{object.id}}Label" class="modal fade" id="invoiceModal{{object.id}}" role="dialog" tabindex="-1">-->
+                        <div aria-hidden="true" class = "modal fade" role="dialog">
+                            <div class="modal-dialog modal-xl" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="invoiceModal{{object.id}}Label">Invoice number: {{object.number}}</h5>
+                                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table class="table-sm">
+                                            <tbody>
+                                            <tr>
+                                                <td scope="col"></td>
+                                                <td scope="col">Name:</td>
+                                                <td scope="col">Address:</td>
+                                                <td scope="col">Tax id:</td>
+                                                <td scope="col">Account number:</td>
+                                                <td scope="col">Phone number:</td>
+                                                <td scope="col">E-mail:</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-primary"><p class="text-center text-white font-weight-bold">Seller</p></td>
+                                                <td><h6>{{object.seller.name}}</h6></td>
+                                                <td><h6>{{object.seller.address}}</h6></td>
+                                                <td><h6>{{object.seller.taxId}}</h6></td>
+                                                <td><h6>{{object.seller.accountNumber}}</h6></td>
+                                                <td><h6>{{object.seller.phoneNumber}}</h6></td>
+                                                <td><h6>{{object.seller.email}}</h6></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-primary"><p class="text-center text-white font-weight-bold">Buyer</p></td>
+                                                <td><h6>{{object.buyer.name}}</h6></td>
+                                                <td><h6>{{object.buyer.address}}</h6></td>
+                                                <td><h6>{{object.buyer.taxId}}</h6></td>
+                                                <td><h6>{{object.buyer.accountNumber}}</h6></td>
+                                                <td><h6>{{object.buyer.phoneNumber}}</h6></td>
+                                                <td><h6>{{object.buyer.email}}</h6></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <p></p>
+                                        <table class="table">
+                                            <tr>
+                                                <th scope="col">Product/Service name:</th>
+                                                <th scope="col">Quantity:</th>
+                                                <th scope="col">Price:</th>
+                                                <th scope="col">Vat rate:</th>
+                                                <th scope="col">Vat value:</th>
+                                                <th scope="col">Gross value:</th>
+                                            </tr>
+                                            <tr *ngFor="let entry of object.entries">
+                                                <td>{{entry.description}}</td>
+                                                <td>{{entry.quantity}}</td>
+                                                <td>{{entry.price}}</td>
+                                                <td>{{entry.vatRate}}</td>
+                                                <td>{{entry.netValue}}</td>
+                                                <td>{{entry.grossValue}}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--                        </div>-->
+                        <!--                        <button class="btn btn-primary" data-target="#invoiceModal{{object.id}}" data-toggle="modal" type="button">Show details</button>&ndash;&gt;-->
+                        <div class="btn-group-vertical">
+                            <button class="btn btn-success" type="button">Show details</button>
+                            <button class="btn btn-primary" type="button">Create</button>
+                        </div>
+                        <div class="btn-group-vertical">
+                            <button class="btn btn-danger"  type="button">PDF</button>
+                            <button class="btn btn-dark"  type="button">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+package pl.coderstrust.configuration;
+
+import io.swagger.annotations.Api;
+import java.util.Collections;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+@Configuration
+@EnableSwagger2
+public class SwaggerConfig {
+    @Bean
+    public Docket api() {
+        return new Docket(DocumentationType.SWAGGER_2)
+            .select()
+            .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
+            .build()
+            .consumes(Collections.singleton("application/json"))
+            .produces(Collections.singleton("application/json"))
+            .apiInfo(apiInfo());
+    }
+
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder().title("Invoice service")
+            .description("Service providing basic operations on Vat Invoices.")
+            .contact(new Contact("Mateusz Pilarczyk", "https://github.com/CodersTrustPL/project-14-andrzej-jakub-mateusz", "matp321@gmail.com"))
+            .version("1.0")
+            .build();
+    }
+}
