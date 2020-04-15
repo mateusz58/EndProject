@@ -24,7 +24,7 @@
     "browser-sync": "^2.26.7",
     "copy-webpack-plugin": "^5.1.1",
     "core-js": "^3.4.7",
-    "jquery": "^1.9.1",
+    "jquery": "^3.4.0",
     "keycloak-angular": "^7.0.1",
     "keycloak-js": "8.0.1",
     "ngx-bootstrap": "^5.2.0",
